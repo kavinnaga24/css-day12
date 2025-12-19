@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flip Card Animation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 250px;
+      height: 320px;
+      perspective: 1000px; 
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+    }
+
+    .card-front {
+      background: #2196f3;
+    }
+
+    .card-back {
+      background: #4caf50;
+      transform: rotateY(180deg);
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        Front Side
+      </div>
+      <div class="card-back">
+        Back Side Content<br>
+        More details here
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        HTML
+      </div>
+      <div class="card-back">
+        Markup Language<br>
+        Used to structure web pages
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        CSS
+      </div>
+      <div class="card-back">
+        Styling Language<br>
+        Adds design and layout
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

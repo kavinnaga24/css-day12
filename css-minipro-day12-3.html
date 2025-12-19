@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Hover Effects</title>
+  <style>
+    body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #3fa9f5, #44c4c8);
+  font-family: Arial, sans-serif;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;  
+}
+
+.primary {
+  background: #2d7ff9;
+}
+
+.secondary {
+  background: #43b581;
+}
+
+.danger {
+  background: #e63946;
+}
+
+.warning {
+  background: #f4a261;
+}
+
+.btn:hover {
+  transform: scale(1.1);     
+  opacity: 0.9;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="button-container">
+    <button class="btn primary">Primary Button</button>
+    <button class="btn secondary">Secondary Button</button>
+    <button class="btn danger">Danger Button</button>
+    <button class="btn warning">Warning Button</button>
+  </div>
+
+</body>
+</html>

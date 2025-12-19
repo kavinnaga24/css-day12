@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Landing Page</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("pic.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+}
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #00c6ff;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #fff;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.tooltip span {
+  visibility: hidden;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover span {
+  visibility: visible;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h1>Welcome 🚀</h1>
+  <p>Responsive Landing Page</p>
+
+  <button onclick="openModal()">Get Started</button>
+
+  <div class="tooltip">
+    ℹ️
+    <span>This is a tooltip</span>
+  </div>
+</div>
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Hello User 👋</h3>
+    <p>This is an animated modal.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

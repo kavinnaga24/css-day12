@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day 1: Progress Bar Animation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f4f4f4;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .progress-container {
+      width: 80%;
+      height: 30px;
+      background: #ddd;
+      border-radius: 20px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #4caf50, #2e7d32);
+      border-radius: 20px;
+      transition: width 0.5s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: #4caf50;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #388e3c;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <h2>Progress Bar Animation</h2>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="bar"></div>
+  </div>
+
+  <div class="percentage" id="percent">0%</div>
+
+  <button onclick="startProgress()">Start Progress</button>
+
+  <script>
+    function startProgress() {
+      let progress = 0;
+      const bar = document.getElementById("bar");
+      const percent = document.getElementById("percent");
+
+      const interval = setInterval(() => {
+        if (progress >= 100) {
+          clearInterval(interval);
+        } else {
+          progress++;
+          bar.style.width = progress + "%";
+          
+        }
+      }, 40);
+    }
+  </script>
+
+</body>
+</html>
